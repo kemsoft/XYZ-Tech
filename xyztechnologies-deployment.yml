@@ -18,7 +18,7 @@ spec:
         app: xyztechnologies
     spec:
       containers:
-      - image: drwizzy/xyztechnologies
+      - image: drwizzy/xyztechnologies:latest
         imagePullPolicy: Always
         name: xyztechnologies
         ports:
