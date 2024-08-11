@@ -1,0 +1,13 @@
+- name: Build an image and push it to a private repo
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: "Create EKS Deployment"
+      delegate_to: localhost
+      shell: kubectl apply -f xyztechnologies-deployment.yml
+
+    - name: "Create EKS Service"
+      delegate_to: localhost
+      shell: kubectl apply -f xyztechnologies-service.yml
