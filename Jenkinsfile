@@ -62,7 +62,7 @@ pipeline {
                 echo 'Logging to Docker Hub...'
                 script {
                     withDockerRegistry(credentialsId: 'dockerhub', url: '') {
-                        docker.image("drwizzy/xyztechnologies:$BUILD_TAG").push()
+                        docker.image("drwizzy/xyztechnologies:$BUILD_TAG").push("current")
                     }
                 }
             }
