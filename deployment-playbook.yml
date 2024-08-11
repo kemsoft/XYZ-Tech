@@ -10,4 +10,6 @@
 
     - name: "Create EKS Service"
       delegate_to: localhost
-      shell: kubectl apply -f xyztechnologies-service.yml
+      shell: |
+        kubectl apply -f xyztechnologies-service.yml
+        kubectl rollout restart deploy xyztechnologies
