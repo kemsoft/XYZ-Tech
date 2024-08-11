@@ -3,23 +3,23 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: abctechnologies
-  name: abctechnologies
+    app: xyztechnologies
+  name: xyztechnologies
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: abctechnologies
+      app: xyztechnologies
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: abctechnologies
+        app: xyztechnologies
     spec:
       containers:
-      - image: drwizzy/abctechnologies:latest
-        name: abctechnologies
+      - image: drwizzy/xyztechnologies:latest
+        name: xyztechnologies
         ports:
         - containerPort: 8080
         resources: {}

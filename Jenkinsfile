@@ -2,9 +2,9 @@ pipeline {
     agent {label 'slave-1'}
 
     environment {
-        imagename = "drwizzy/abctechnologies"
+        imagename = "drwizzy/xyztechnologies"
         dockerImage = ''
-        appName = "abctechnologies"
+        appName = "xyztechnologies"
     }
 
     tools {
@@ -50,9 +50,9 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 
-                 sh 'docker build -t abctechnologies .'
+                 sh 'docker build -t xyztechnologies .'
                  echo 'Image Build Completed!!'
-                 sh "docker tag abctechnologies:latest drwizzy/abctechnologies:$BUILD_TAG"
+                 sh "docker tag xyztechnologies:latest drwizzy/xyztechnologies:$BUILD_TAG"
                  sh "docker images"
             }
         }
@@ -62,7 +62,7 @@ pipeline {
                 echo 'Logging to Docker Hub...'
                 script {
                     withDockerRegistry(credentialsId: 'dockerhub', url: '') {
-                        docker.image("drwizzy/abctechnologies:$BUILD_TAG").push()
+                        docker.image("drwizzy/xyztechnologies:$BUILD_TAG").push()
                     }
                 }
             }
